@@ -35,6 +35,64 @@ public class Product {
 
     String sku;
 
-    public Product() {
-    }
+    public Long getId() {
+    return id;
 }
+
+public Brand getBrand() {
+    return brand;
+}
+
+public Category getCategory() {
+    return category;
+}
+
+public String getName() {
+    return name;
+}
+
+public BigDecimal getPrice() {
+    return price;
+}
+
+public String getDescription() {
+    return description;
+}
+
+public Integer getStockQuantity() {
+    return stockQuantity;
+}
+
+public String getImageUrl() {
+    return imageUrl;
+}
+
+public String getSku() {
+    return sku;
+}
+}
+
+// package com.example.demo.model;
+
+// import jakarta.persistence.*;
+// import java.math.BigDecimal;
+
+// @Entity
+// @Table(name = "products")
+// public class Product {
+
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
+
+//     private String brand;
+
+//     private String name;
+
+//     private BigDecimal price;
+
+//     private String description;
+
+//     public Product() {
+//     }
+// }     

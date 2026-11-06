@@ -14,6 +14,15 @@ public class Brand {
 
     String logo;
 
-    public Brand() {
-    }
+    public Long getId() {
+    return id;
+}
+
+public String getName() {
+    return name;
+}
+
+public String getLogo() {
+    return logo;
+}
 }
