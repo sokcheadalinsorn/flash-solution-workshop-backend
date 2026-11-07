@@ -11,65 +11,101 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Relationship with Brand
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    // Relationship with Category
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
-    String name;
+    private String name;
 
-    BigDecimal price;
+    private BigDecimal price;
 
-    String description;
+    private String description;
 
     @Column(name = "stock_quantity")
-    Integer stockQuantity;
+    private Integer stockQuantity;
 
     @Column(name = "image_url")
-    String imageUrl;
+    private String imageUrl;
 
-    String sku;
+    private String sku;
 
+    // Constructor
+    public Product() {
+    }
+
+    // Getters
     public Long getId() {
-    return id;
-}
+        return id;
+    }
 
-public Brand getBrand() {
-    return brand;
-}
+    public Brand getBrand() {
+        return brand;
+    }
 
-public Category getCategory() {
-    return category;
-}
+    public Category getCategory() {
+        return category;
+    }
 
-public String getName() {
-    return name;
-}
+    public String getName() {
+        return name;
+    }
 
-public BigDecimal getPrice() {
-    return price;
-}
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-public String getDescription() {
-    return description;
-}
+    public String getDescription() {
+        return description;
+    }
 
-public Integer getStockQuantity() {
-    return stockQuantity;
-}
+    public Integer getStockQuantity() {
+        return stockQuantity;
+    }
 
-public String getImageUrl() {
-    return imageUrl;
-}
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-public String getSku() {
-    return sku;
-}
+    public String getSku() {
+        return sku;
+    }
+
+    // Setters
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setStockQuantity(Integer stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
 }
 
 // package com.example.demo.model;
