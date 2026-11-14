@@ -37,71 +37,70 @@ public class Product {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
+    
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
+
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
+
     public float getPrice() {
         return price;
     }
-
     public void setPrice(float price) {
         this.price = price;
     }
 
+
     public Integer getStock_quanity() {
         return stock_quanity;
     }
-
     public void setStock_quanity(Integer stock_quanity) {
         this.stock_quanity = stock_quanity;
     }
 
+
     public String getImageUrl() {
         return imageUrl;
     }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
+
     public String getSku() {
         return sku;
     }
-
     public void setSku(String sku) {
         this.sku = sku;
     }
 
+
     public Brand getBrand() {
         return brand;
     }
-
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
 
+
     public Category getCategory() {
         return category;
     }
-
     public void setCategory(Category category) {
         this.category = category;
     }
