@@ -31,18 +31,16 @@ public class ProductService {
     // Method to retrieve a product by ID
     public Product getProductById(Long id) {
         return productRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new RuntimeException("Product not found"));
 
-    
     }
 
     // Method to update a product
     public Product updateProduct(Long id, Product updatedProduct) {
 
         Product product = productRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "Product not found"
-            ));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Product not found"));
 
         product.setName(updatedProduct.getName());
         product.setDescription(updatedProduct.getDescription());
@@ -54,18 +52,15 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    
     // Method to delete a product
     public void deleteProduct(Long id) {
 
         if (!productRepository.existsById(id)) {
             throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "Product not found"
-            );
+                    HttpStatus.NOT_FOUND, "Product not found");
         }
 
         productRepository.deleteById(id);
     }
-
 
 }
