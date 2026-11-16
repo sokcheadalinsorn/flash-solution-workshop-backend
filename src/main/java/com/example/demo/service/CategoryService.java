@@ -1,21 +1,21 @@
-package com.example.demo.service;
+// package com.example.demo.service;
 
-import java.util.List;
-import java.util.Locale.Category;
+// import java.util.List;
+// import java.util.Locale.Category;
 
-import org.springframework.stereotype.Service;
+// import org.springframework.stereotype.Service;
 
-/**
- * CategoryService
- */
-@Service 
-public interface CategoryService {
+// /**
+//  * CategoryService
+//  */
+// @Service 
+// public interface CategoryService {
 
-    Category creaCategory(com.example.demo.model.Category category);
-    List<Category> getAllCategories();
-    Category getCategoryById(Long id);
-    Category UpdateCategory(Long id, Category category);
-    void deleteCategory(Long id);
+//     Category creaCategory(com.example.demo.model.Category category);
+//     List<Category> getAllCategories();
+//     Category getCategoryById(Long id);
+//     Category UpdateCategory(Long id, Category category);
+//     void deleteCategory(Long id);
 
 
-}
+// }
