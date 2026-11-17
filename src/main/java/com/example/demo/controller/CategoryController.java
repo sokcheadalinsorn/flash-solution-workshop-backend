@@ -1,53 +1,43 @@
-// package com.example.demo.controller;
+package com.example.demo.controller;
 
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.ResponseStatus;
-// import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.model.Category;
+import com.example.demo.service.CategoryService;
 
-// import com.example.demo.model.Category;
-// import com.example.demo.service.CategoryService;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
-// import java.util.List;
+@RestController
+@RequestMapping("/api/categories")
+@CrossOrigin(origins = "http://localhost:5173")
+public class CategoryController {
 
-// import org.springframework.http.HttpStatus;
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.RequestParam;
+    private final CategoryService categoryService;
 
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
+    // GET ALL CATEGORIES
+    @GetMapping
+    public List<Category> getAllCategories() {
+        return categoryService.getAllCategories();
+    }
 
-// @RestController 
-// @RequestMapping ("api/categories/")
-// public class CategoryController {
-//     private final CategoryService categoryService;
+    // GET CATEGORY BY ID
+    @GetMapping("/{id}")
+    public Category getCategoryById(@PathVariable Long id) {
+        return categoryService.getCategoryById(id);
+    }
 
-//     public CategoryController(CategoryService categoryService){
-//         this.categoryService = categoryService;
-//     }
+    // CREATE CATEGORY
+    @PostMapping
+    public Category createCategory(@RequestBody Category category) {
+        return categoryService.createCategory(category);
+    }
 
-//     // POST
-//     @PostMapping
-//     @ResponseStatus(HttpStatus.CREATED)
-//     public Category create(@RequestBody Category category) {
-//         return categoryService.createCategory(category);
-//     }
-
-//     // GET
-//     @GetMapping
-//     public List<Category> getAll() {
-//         return categoryService.getAllCategories();
-//     }
-
-//     @GetMapping("/{id}")
-//     public Category getById(@PathVariable Long id){
-//         return categoryService.getCategoryById(id);
-//     }
-    
-    
-    
-    
-    
-    
-// }
+    // DELETE CATEGORY
+    @DeleteMapping("/{id}")
+    public void deleteCategory(@PathVariable Long id) {
+        categoryService.deleteCategory(id);
+    }
+}
