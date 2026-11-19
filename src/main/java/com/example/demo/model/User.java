@@ -26,6 +26,12 @@ public class User {
 
     @Column(nullable = false)
     private String role = "CUSTOMER";
+    // add new lines
+    @Column(name = "phone", length = 30)
+    private String phone;
+
+    @Column(name = "skin_type", length = 30)
+    private String skinType;
 
     public User() {
     }
@@ -71,5 +77,22 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    // Add new lines
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSkinType() {
+        return skinType;
+    }
+
+    public void setSkinType(String skinType) {
+        this.skinType = skinType;
     }
 }
