@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -21,11 +23,15 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
-    private String password;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+@Column(nullable = false)
+private String password;
 
     @Column(nullable = false)
     private String role = "CUSTOMER";
+    @Column(name = "status")
+    private String status = "Active";
+
     // add new lines
     @Column(name = "phone", length = 30)
     private String phone;
@@ -94,5 +100,13 @@ public class User {
 
     public void setSkinType(String skinType) {
         this.skinType = skinType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
