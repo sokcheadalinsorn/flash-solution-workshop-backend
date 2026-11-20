@@ -38,9 +38,13 @@ public class ProductController {
     }
 
     // GET: Retrieve a product by ID
-    @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    // @GetMapping
+    // public List<Product> getAllProducts() {
+    // return productService.getAllProducts();
+    // }
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
     }
 
     // PUT: Update a product
